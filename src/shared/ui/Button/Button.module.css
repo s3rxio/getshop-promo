@@ -1,0 +1,47 @@
+.button {
+  display: inline-block;
+  padding: 1rem;
+
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition-property: background-color, color;
+  transition-duration: 0.2s;
+}
+
+.button_color_black {
+  --button-color: black;
+  --button-text-color: white;
+}
+
+.button_color_white {
+  --button-color: white;
+  --button-text-color: black;
+}
+
+.button_variant_outlined {
+  border-color: var(--button-color);
+  color: var(--button-color);
+
+  background-color: transparent;
+}
+
+.button_variant_outlined:hover {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+}
+
+.button_variant_contained {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+}
+
+.button_color_white.button_variant_contained {
+  border-color: var(--button-text-color);
+}
+
+.button_disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+

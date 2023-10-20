@@ -1,3 +1,4 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 
 *,
@@ -9,6 +10,18 @@
   padding: 0;
 }
 
+:root {
+  --button-color: black;
+  --button-text-color: white;
+
+  --primary-color: #86d3f4;
+  --secondary-color: black;
+
+  --bg-color: var(--primary-color);
+  --text-color: var(--secondary-color);
+  --muted-text-color: #565656;
+}
+
 html,
 body,
 #root {
@@ -16,4 +29,5 @@ body,
   height: 100%;
 
   font-family: "Roboto", sans-serif;
+  font-weight: 500;
 }
