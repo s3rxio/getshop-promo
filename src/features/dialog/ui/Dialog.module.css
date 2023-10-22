@@ -1,0 +1,64 @@
+.dialog-overlay {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: var(--layer-dialog);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.dialog-container {
+  position: relative;
+}
+
+.dialog-close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: var(--space-4);
+  z-index: var(--layer-dialog-close);
+}
+
+.dialog-close-button__icon {
+  --icon-size: 2rem;
+
+  position: relative;
+  display: inline-block;
+
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+.dialog-close-button__icon::after {
+  content: "";
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+
+  position: absolute;
+  width: var(--icon-size);
+  height: 0.1875rem;
+
+  background: var(--text-color);
+}
+
+.dialog-close-button__icon::before {
+  content: "";
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+
+  position: absolute;
+  width: var(--icon-size);
+  height: 0.1875rem;
+
+  background: var(--text-color);
+}

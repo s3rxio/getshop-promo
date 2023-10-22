@@ -1,6 +1,5 @@
 .button {
   display: inline-block;
-  padding: 1rem;
 
   border: 2px solid transparent;
   cursor: pointer;
@@ -39,6 +38,14 @@
 
 .button_color_white.button_variant_contained {
   border-color: var(--button-text-color);
+}
+
+.button_size_medium {
+  padding: var(--space-2) var(--space-3);
+}
+
+.button_size_large {
+  padding: var(--space-3) var(--space-4);
 }
 
 .button_disabled {

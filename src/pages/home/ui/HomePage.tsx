@@ -4,9 +4,11 @@ import styles from "./HomePage.module.css";
 import { cls } from "../../../shared/libs";
 import QrCode from "../../../shared/assets/qr_code.png";
 import PromoVideo from "../../../shared/assets/promo.mp4";
+import { useDialog } from "../../../features/dialog";
 
 export const HomePage: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false);
+  const { setDialog } = useDialog();
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleOnPlay = () => {
@@ -26,9 +28,14 @@ export const HomePage: React.FC = () => {
   const handleBannerOpen = () => {
     setShowBanner(false);
 
-    if (videoRef.current) {
-      videoRef.current.pause();
-    }
+    // if (videoRef.current) {
+    //   videoRef.current.pause();
+    // }
+
+    setDialog({
+      children: "Добро пожаловать!",
+      extraChildren: <p>Сканируйте QR-код или нажмите ОК</p>,
+    });
   };
 
   return (
@@ -38,12 +45,10 @@ export const HomePage: React.FC = () => {
         className={styles["home-page__video"]}
         src={PromoVideo}
         autoPlay
-        muted
+        // muted
         onPlay={() => handleOnPlay()}
         loop
-      >
-        Ваш браузер не поддерживает HTML5 video
-      </video>
+      />
 
       <Banner
         title="Не ошибайтесь в своем выборе. Покупайте Volvo сейчас!"

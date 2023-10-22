@@ -20,6 +20,20 @@
   --bg-color: var(--primary-color);
   --text-color: var(--secondary-color);
   --muted-text-color: #565656;
+
+  --layer-content: 100;
+  --layer-banner: 200;
+  --layer-dialog: 300;
+
+  /* Почему в макете разные отступы? */
+  --space-1: 0.625rem;
+  --space-2: 0.8rem;
+  --space-3: 1rem;
+  --space-4: 1.25rem;
+  --space-5: 1.5rem;
+  --space-6: 1.875rem;
+  --space-7: 2rem;
+  --space-8: 2.5rem;
 }
 
 html,
@@ -32,6 +46,7 @@ body,
   font-weight: 500;
 
   overflow: hidden;
+  z-index: var(--layer-content);
 }
 
 h1 {

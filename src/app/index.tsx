@@ -1,9 +1,13 @@
 import React from "react";
-import "./app.css";
 import { HomePage } from "../pages/home";
+import { DialogProvider } from "../features/dialog";
 
 const App: React.FC = () => {
-  return <HomePage />;
+  return (
+    <DialogProvider>
+      <HomePage />
+    </DialogProvider>
+  );
 };
 
 export default App;
