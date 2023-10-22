@@ -25,7 +25,9 @@
   background-color: transparent;
 }
 
-.button_variant_outlined:hover {
+.button_variant_outlined:hover,
+.button_variant_outlined:active,
+.button_variant_outlined:focus {
   background-color: var(--button-color);
   color: var(--button-text-color);
 }
@@ -44,4 +46,3 @@
   cursor: not-allowed;
   opacity: 0.5;
 }
-

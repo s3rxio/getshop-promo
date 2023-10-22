@@ -1,0 +1,33 @@
+.banner {
+  display: inline-flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  gap: 1.25rem;
+  padding: 0.625rem;
+  padding-top: 1.25rem;
+
+  color: var(--text-color);
+  background-color: var(--primary-color);
+}
+
+.banner__title {
+  font-size: 1rem;
+  max-width: 14.43rem;
+}
+
+.banner__description {
+  width: 128px;
+  font-size: 0.875rem;
+}
+
+.banner__button {
+  width: 9.75rem
+}
+
+.banner__button:hover {
+  color: var(--primary-color);
+}

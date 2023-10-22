@@ -4,23 +4,25 @@ import styles from "./Button.module.css";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   variant?: "outlined" | "contained";
   color?: "black" | "white";
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    {
+    props,
+    ref
+  ) => {
+    const {
       children,
       className,
       variant = "outlined",
       color = "black",
       disabled,
-      ...props
-    },
-    ref
-  ) => {
+      ...restProps
+    } = props;
+
     const buttonStyles = cls(
       styles.button,
       styles[`button_variant_${variant}`],
@@ -30,7 +32,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     );
 
     return (
-      <button ref={ref} className={buttonStyles} {...props}>
+      <button ref={ref} className={buttonStyles} {...restProps}>
         {children}
       </button>
     );

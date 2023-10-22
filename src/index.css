@@ -30,4 +30,26 @@ body,
 
   font-family: "Roboto", sans-serif;
   font-weight: 500;
+
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.625rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.875rem;
 }
