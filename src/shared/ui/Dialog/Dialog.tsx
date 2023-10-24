@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../../../shared/ui";
+import { Button } from "..";
 import styles from "./Dialog.module.css";
 
 export interface DialogProps {
@@ -16,7 +16,8 @@ const Dialog: React.FC<DialogProps> = ({
   return (
     <div className={styles["dialog-overlay"]}>
       <div className={styles["dialog-container"]}>{dialog}</div>
-
+      {extraChildren}
+      
       <Button
         variant="contained"
         color="white"
@@ -25,8 +26,6 @@ const Dialog: React.FC<DialogProps> = ({
       >
         <span className={styles["dialog-close-button__icon"]}></span>
       </Button>
-
-      {extraChildren}
     </div>
   );
 };

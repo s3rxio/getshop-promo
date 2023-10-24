@@ -1,15 +1,20 @@
-import React, { createContext, useCallback, useState } from "react";
-import Dialog from "./ui/Dialog";
+import React, { createContext, useCallback, useEffect, useState } from "react";
+import { Dialog } from "./ui";
 
-type SetDialog = {
-  children: React.ReactNode;
+interface SetDialog {
+  dialog: React.ReactNode;
   extraChildren?: React.ReactNode;
-};
+
+  onOpen?: () => void;
+  onClose?: () => void;
+}
+
+type SetState<T> = React.Dispatch<React.SetStateAction<T>>;
 
 interface DialogContextProps {
-  setDialog: React.Dispatch<React.SetStateAction<SetDialog | null>>;
-  unsetDialog: React.Dispatch<React.SetStateAction<boolean>>;
-}
+  setDialog: SetState<SetDialog | null>;
+  unsetDialog: SetState<boolean>;
+}2
 
 interface DialogProviderProps {
   children?: React.ReactNode;
@@ -23,13 +28,25 @@ export const DialogProvider: React.FC<DialogProviderProps> = ({ children }) => {
     setDialog(null);
   }, [setDialog]);
 
+  useEffect(() => {
+    if (dialog?.onOpen) {
+      dialog.onOpen();
+    }
+
+    return () => {
+      if (dialog?.onClose) {
+        dialog.onClose();
+      }
+    };
+  }, [dialog]);
+
   return (
     <DialogContext.Provider value={{ setDialog, unsetDialog }}>
       {children}
 
       {dialog && (
         <Dialog
-          dialog={dialog.children}
+          dialog={dialog.dialog}
           unsetDialog={unsetDialog}
           extraChildren={dialog.extraChildren}
         />

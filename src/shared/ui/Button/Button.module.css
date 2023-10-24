@@ -40,6 +40,13 @@
   border-color: var(--button-text-color);
 }
 
+.button_color_white.button_variant_contained:hover,
+.button_color_white.button_variant_contained:active,
+.button_color_white.button_variant_contained:focus {
+  background-color: var(--button-text-color);
+  color: var(--button-color);
+}
+
 .button_size_medium {
   padding: var(--space-2) var(--space-3);
 }

@@ -1,10 +1,13 @@
 import React, { useRef, useState } from "react";
 import { Banner } from "../../../shared/ui";
 import styles from "./HomePage.module.css";
-import { cls } from "../../../shared/libs";
+import { cls, useDialog } from "../../../shared/libs";
 import QrCode from "../../../shared/assets/qr_code.png";
 import PromoVideo from "../../../shared/assets/promo.mp4";
-import { useDialog } from "../../../features/dialog";
+import {
+  AdditionalBanner,
+  RegistrationDialog
+} from "../../../features/registrationDialog";
 
 export const HomePage: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false);
@@ -14,6 +17,10 @@ export const HomePage: React.FC = () => {
   const handleOnPlay = () => {
     if (videoRef.current) {
       videoRef.current.volume = 0.3;
+    }
+
+    if (showBanner) {
+      return;
     }
 
     const timer = setTimeout(() => {
@@ -28,13 +35,11 @@ export const HomePage: React.FC = () => {
   const handleBannerOpen = () => {
     setShowBanner(false);
 
-    // if (videoRef.current) {
-    //   videoRef.current.pause();
-    // }
-
     setDialog({
-      children: "Добро пожаловать!",
-      extraChildren: <p>Сканируйте QR-код или нажмите ОК</p>,
+      dialog: <RegistrationDialog />,
+      extraChildren: <AdditionalBanner />,
+      onOpen: () => videoRef.current?.pause(),
+      onClose: () => videoRef.current?.play()
     });
   };
 
@@ -44,8 +49,9 @@ export const HomePage: React.FC = () => {
         ref={videoRef}
         className={styles["home-page__video"]}
         src={PromoVideo}
-        autoPlay
+        // autoPlay
         // muted
+        controls
         onPlay={() => handleOnPlay()}
         loop
       />

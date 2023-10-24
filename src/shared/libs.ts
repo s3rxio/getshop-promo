@@ -1,17 +1,17 @@
-import { useEffect } from "react";
-
+import { useContext } from "react";
+import { DialogContext } from "./providers";
 type Classes = string | number | null | boolean | undefined | Classes[];
 
 export const cls = (...classes: Classes[]) => {
   return classes.filter(Boolean).join(" ");
 };
 
-export const useTimeout = (callback: () => void, delay?: number) => {
-  useEffect(() => {
-    const timer = setTimeout(callback, delay);
+export const useDialog = () => {
+  const context = useContext(DialogContext);
 
-    return () => {
-      clearTimeout(timer);
-    };
-  });
+  if (!context) {
+    throw new Error("useDialog must be used within a DialogProvider");
+  }
+
+  return context;
 };

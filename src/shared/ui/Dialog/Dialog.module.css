@@ -28,6 +28,7 @@
 
 .dialog-close-button__icon {
   --icon-size: 2rem;
+  --icon-color: var(--button-text-color);
 
   position: relative;
   display: inline-block;
@@ -47,7 +48,7 @@
   width: var(--icon-size);
   height: 0.1875rem;
 
-  background: var(--text-color);
+  background: var(--icon-color);
 }
 
 .dialog-close-button__icon::before {
@@ -60,5 +61,9 @@
   width: var(--icon-size);
   height: 0.1875rem;
 
-  background: var(--text-color);
+  background: var(--icon-color);
+}
+
+.dialog-close-button:hover .dialog-close-button__icon {
+  --icon-color: var(--button-color);
 }

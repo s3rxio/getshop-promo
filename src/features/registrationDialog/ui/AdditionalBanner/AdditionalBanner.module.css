@@ -1,0 +1,20 @@
+.additional-banner {
+  position: absolute;
+
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+
+  justify-content: right;
+  align-items: center;
+  text-align: right;
+
+  color: white;
+  text-transform: uppercase;
+
+  margin: var(--space-8);
+  gap: var(--space-1);
+
+  max-width: 18rem;
+}
