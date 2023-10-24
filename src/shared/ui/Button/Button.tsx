@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import { cls } from "../../libs";
+import { cls } from "@/shared/libs";
 import styles from "./Button.module.css";
 
 export interface ButtonProps

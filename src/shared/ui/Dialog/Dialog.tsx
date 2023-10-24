@@ -17,7 +17,7 @@ const Dialog: React.FC<DialogProps> = ({
     <div className={styles["dialog-overlay"]}>
       <div className={styles["dialog-container"]}>{dialog}</div>
       {extraChildren}
-      
+
       <Button
         variant="contained"
         color="white"

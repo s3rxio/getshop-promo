@@ -1,5 +1,5 @@
 import React from "react";
-import { cls } from "../../libs";
+import { cls } from "@/shared/libs";
 import { Button } from "..";
 import styles from "./Banner.module.css";
 

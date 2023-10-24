@@ -1,13 +1,13 @@
 import React, { useRef, useState } from "react";
-import { Banner } from "../../../shared/ui";
+import { Banner } from "@/shared/ui";
 import styles from "./HomePage.module.css";
-import { cls, useDialog } from "../../../shared/libs";
-import QrCode from "../../../shared/assets/qr_code.png";
-import PromoVideo from "../../../shared/assets/promo.mp4";
+import { cls, useDialog } from "@/shared/libs";
+import QrCode from "@/shared/assets/qr_code.png";
+import PromoVideo from "@/shared/assets/promo.mp4";
 import {
   AdditionalBanner,
   RegistrationDialog
-} from "../../../features/registrationDialog";
+} from "@/features/registrationDialog";
 
 export const HomePage: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false);

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./AdditionalBanner.module.css";
-import QrCode from "../../../../shared/assets/qr_code.png";
+import QrCode from "@/shared/assets/qr_code.png";
 
 const AdditionalBanner: React.FC = () => {
   return (

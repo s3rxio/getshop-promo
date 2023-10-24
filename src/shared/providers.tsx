@@ -14,7 +14,8 @@ type SetState<T> = React.Dispatch<React.SetStateAction<T>>;
 interface DialogContextProps {
   setDialog: SetState<SetDialog | null>;
   unsetDialog: SetState<boolean>;
-}2
+}
+2;
 
 interface DialogProviderProps {
   children?: React.ReactNode;
